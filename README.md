@@ -1,13 +1,15 @@
-# fastdfs·şÎñ¼¯ºÏ
-fastdfsµÄ·şÎñ¼¯ºÏ£¬°üº¬trackerÓëstorage·şÎñ£¬¼¯³É°¢ÀïÔÆµÄyum.repo,Ê¹°²×°ËÙ¶È¸ü¼Ó¿ìËÙ£¡
+# fastdfsæœåŠ¡é›†åˆ
+[![](https://images.microbadger.com/badges/version/manuku/fastdfs-tracker.svg)](https://microbadger.com/images/manuku/fastdfs-tracker "Get your own version badge on microbadger.com")
 
-# Ê¹ÓÃ¼ò½é
-µ±Ç°dockerÔÚdocker for windows ÉÏÔËĞĞÕı³£¡£
-- ÏÈÆô¶¯Á½Ì¨fastdfs-tracker£¨Éú³Éip:172.17.0.2,ip:172.17.0.3µÄÁ½Ì¨tracker£©
-- ÔÙÆô¶¯Á½Ì¨fastdfs-storage-dht·şÎñ(Éú³Éip:172.17.0.4£¬ip:172.17.0.5)£¬storage¼¯³ÉÁËfastdhtÊµÏÖÎÄ¼şÅÅÖØ¹¦ÄÜ¡£
-- ²âÊÔÉÏ´«
+fastdfsçš„æœåŠ¡é›†åˆï¼ŒåŒ…å«trackerä¸storageæœåŠ¡ï¼Œé›†æˆé˜¿é‡Œäº‘çš„yum.repo,ä½¿å®‰è£…é€Ÿåº¦æ›´åŠ å¿«é€Ÿï¼
 
-# Æô¶¯ÃüÁî
+# ä½¿ç”¨ç®€ä»‹
+å½“å‰dockeråœ¨docker for windows ä¸Šè¿è¡Œæ­£å¸¸ã€‚
+- å…ˆå¯åŠ¨ä¸¤å°fastdfs-trackerï¼ˆç”Ÿæˆip:172.17.0.2,ip:172.17.0.3çš„ä¸¤å°trackerï¼‰
+- å†å¯åŠ¨ä¸¤å°fastdfs-storage-dhtæœåŠ¡(ç”Ÿæˆip:172.17.0.4ï¼Œip:172.17.0.5)ï¼Œstorageé›†æˆäº†fastdhtå®ç°æ–‡ä»¶æ’é‡åŠŸèƒ½ã€‚
+- æµ‹è¯•ä¸Šä¼ 
+
+# å¯åŠ¨å‘½ä»¤
 ```java
 # 172.17.0.2
 docker run -dit -p 181:80 -p 22122:22122 --name tracker1 imlzw/fastdfs-tracker
@@ -20,7 +22,7 @@ docker run -dit -p 282:80 -p 23001:23000 --name u_group1_storage2 --link tracker
 # 172.17.0.5
 docker run -dit -p 282:80 -p 23001:23000 --name u_group1_storage2 --link tracker1:tracker1 --link tracker2:tracker2 imlzw/fastdfs-storage-dht
 ```
-Èç¹ûÉú³Éip²»ÊÇÉÏÃæµÄ»°£¬ÔËĞĞ¿ÉÄÜ»á³ö´í£¬ÄãĞèÒª×ÔĞĞĞŞ¸ÄËùÓĞÏà¹ØÎÄ¼ş¼ĞÏÂµÄÅäÖÃÎÄ¼ş£¨/etc/fdfs/*,/etc/fdht/*£©£¬ÊÖ¶¯Í£Ö¹ÓëÊÖ¶¯Æô¶¯·şÎñ
+å¦‚æœç”Ÿæˆipä¸æ˜¯ä¸Šé¢çš„è¯ï¼Œè¿è¡Œå¯èƒ½ä¼šå‡ºé”™ï¼Œä½ éœ€è¦è‡ªè¡Œä¿®æ”¹æ‰€æœ‰ç›¸å…³æ–‡ä»¶å¤¹ä¸‹çš„é…ç½®æ–‡ä»¶ï¼ˆ/etc/fdfs/*,/etc/fdht/*ï¼‰ï¼Œæ‰‹åŠ¨åœæ­¢ä¸æ‰‹åŠ¨å¯åŠ¨æœåŠ¡
 
-# ×ÔÆô¶¯ÓëÊÖ¶¯Æô¶¯
-ËùÓĞÈİÆ÷¶¼ÒÑ¾­¼¯³É×ÔÆô¶¯·şÎñµÄ¹¦ÄÜ£¬²¢ÇÒÌá¹©Æô¶¯·şÎñÓëÍ£Ö¹·şÎñµÄÃüÁî£ºstart_fdfsÓëstop_fdfs
+# è‡ªå¯åŠ¨ä¸æ‰‹åŠ¨å¯åŠ¨
+æ‰€æœ‰å®¹å™¨éƒ½å·²ç»é›†æˆè‡ªå¯åŠ¨æœåŠ¡çš„åŠŸèƒ½ï¼Œå¹¶ä¸”æä¾›å¯åŠ¨æœåŠ¡ä¸åœæ­¢æœåŠ¡çš„å‘½ä»¤ï¼šstart_fdfsä¸stop_fdfs

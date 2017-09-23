@@ -1,2 +1,2 @@
-docker build -t imlzw/fastdfs-tracker ./
+docker build -t manuku/fastdfs-tracker ./
 pause
